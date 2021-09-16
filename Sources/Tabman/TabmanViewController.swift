@@ -70,6 +70,8 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     }()
     private var barLayoutGuideTop: NSLayoutConstraint?
     private var barLayoutGuideBottom: NSLayoutConstraint?
+
+    open var isScrollAnimationEnabled: Bool = true
     
     // MARK: Init
     
@@ -193,7 +195,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     /// :nodoc:
     open func bar(_ bar: TMBar,
                   didRequestScrollTo index: PageboyViewController.PageIndex) {
-        scrollToPage(.at(index: index), animated: true, completion: nil)
+        scrollToPage(.at(index: index), animated: isScrollAnimationEnabled, completion: nil)
     }
 }
 
