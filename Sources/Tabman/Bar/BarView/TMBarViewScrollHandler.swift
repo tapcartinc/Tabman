@@ -3,12 +3,12 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 14/10/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
-internal protocol TMBarViewScrollHandlerDelegate: class {
+internal protocol TMBarViewScrollHandlerDelegate: AnyObject {
     
     func barViewScrollHandler(_ handler: TMBarViewScrollHandler,
                               didReceiveUpdated contentOffset: CGPoint,

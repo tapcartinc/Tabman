@@ -3,14 +3,13 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 22/02/2019.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
 ///
 open class TMBadgeView: UIView {
-    
     // MARK: Defaults
     
     private struct Defaults {
@@ -68,10 +67,9 @@ open class TMBadgeView: UIView {
     }
     /// Tint which is used as background color.
     open override var tintColor: UIColor! {
-        didSet {
-            contentView.backgroundColor = tintColor
-        }
+        didSet {}
     }
+
     /// Content Inset around the badge label.
     ///
     /// Defaults to `UIEdgeInsets(top: 2.0, left: 4.0, bottom: 2.0, right: 4.0)`.
@@ -133,6 +131,10 @@ open class TMBadgeView: UIView {
         super.layoutSubviews()
         
         contentView.layer.cornerRadius = bounds.size.height / 2.0
+    }
+
+    open override func tintColorDidChange() {
+        contentView.backgroundColor = tintColor
     }
 }
 

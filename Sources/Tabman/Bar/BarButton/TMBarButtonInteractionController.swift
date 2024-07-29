@@ -3,12 +3,12 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 05/07/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import Foundation
 
-internal protocol TMBarButtonInteractionHandler: class {
+internal protocol TMBarButtonInteractionHandler: AnyObject {
     
     func barButtonInteraction(controller: TMBarButtonInteractionController,
                               didHandlePressOf button: TMBarButton,

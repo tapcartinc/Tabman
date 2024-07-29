@@ -3,12 +3,12 @@
 //  AutoInsetter
 //
 //  Created by Merrick Sapsford on 16/03/2019.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
-internal protocol InsetCalculator: class {
+internal protocol InsetCalculator: AnyObject {
     
     func calculateContentInset(from spec: AutoInsetSpec, store: InsetStore) -> ContentInsetCalculation?
 

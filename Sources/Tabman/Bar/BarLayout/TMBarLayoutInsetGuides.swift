@@ -3,13 +3,13 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 08/08/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
 /// Object that provides layout guides for bar layout insets.
-internal protocol TMBarLayoutInsetGuides: class {
+internal protocol TMBarLayoutInsetGuides: AnyObject {
     
     /// The leading inset guide for the layout.
     var leadingInset: UILayoutGuide { get }

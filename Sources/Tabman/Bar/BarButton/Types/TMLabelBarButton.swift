@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 06/06/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -71,11 +71,7 @@ open class TMLabelBarButton: TMBarButton {
     }
     /// Color of the text when unselected / normal.
     open override var tintColor: UIColor! {
-        didSet {
-            if !isSelected {
-                label.textColor = tintColor
-            }
-        }
+        didSet {}
     }
     /// Color of the text when selected.
     open var selectedTintColor: UIColor! {
@@ -237,6 +233,14 @@ open class TMLabelBarButton: TMBarButton {
                     self.label.font = self.font
                 }, completion: nil)
             }
+        }
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+
+        if !isSelected {
+            label.textColor = tintColor
         }
     }
     

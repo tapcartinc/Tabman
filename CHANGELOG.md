@@ -2,7 +2,14 @@
 All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
+#### 3.x Releases
+- `3.2.x` Releases - [3.2.0](#320)
+- `3.1.x` Releases - [3.1.0](#310)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302)
+
 #### 2.x Releases
+- `2.13.x` Releases - [2.13.0](#2130)
+- `2.12.x` Releases - [2.12.0](#2120)
 - `2.11.x` Releases - [2.11.0](#2110) | [2.11.1](#2111)
 - `2.10.x` Releases - [2.10.0](#2100)
 - `2.9.x` Releases - [2.9.0](#290) | [2.9.1](#291)
@@ -35,6 +42,71 @@ All notable changes to this project will be documented in this file.
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
+
+---
+## [3.2.0](https://github.com/uias/Tabman/releases/tag/3.2.0)
+Released on 2024-04-14
+
+#### Updated
+- Downgraded SPM Swift requirement to Swift 5.7 (Xcode 14).
+
+---
+## [3.1.0](https://github.com/uias/Tabman/releases/tag/3.1.0)
+Released on 2024-04-06
+
+#### Added
+- Support for Xcode 15.
+- Support for Privacy Manifests.
+
+#### Updated
+- Pageboy now requires iOS 12 or tvOS 12.
+
+---
+## [3.0.2](https://github.com/uias/Tabman/releases/tag/3.0.2)
+Released on 2023-07-16
+
+#### Fixed
+- [#615](https://github.com/uias/Tabman/issues/615) Issue where Tabman components would not respond to `tintColor` changes correctly.
+     - by [mlmorgan](https://github.com/mlmorgan)
+
+## [3.0.1](https://github.com/uias/Tabman/releases/tag/3.0.1)
+Released on 2022-11-08
+
+#### Fixed
+- [#605](https://github.com/uias/Tabman/issues/605) Issue where `TMBarView.backgroundView` would not be visible due to broken layout constraints.
+
+## [3.0.0](https://github.com/uias/Tabman/releases/tag/3.0.0)
+Released on 2022-11-02
+
+#### Added
+- Support for Xcode 14.
+
+#### Updated
+- Tabman now requires iOS 11 or newer.
+- `delegate` is now `unavailable` on `TabmanViewController`.
+
+---
+## [2.13.0](https://github.com/uias/Tabman/releases/tag/2.13.0)
+Released on 2022-08-20
+
+#### Updated
+- Pageboy to [3.7.0](https://github.com/uias/Pageboy/releases/tag/3.7.0).
+
+#### Fixed
+- [#601](https://github.com/uias/Tabman/pull/601) Issue where `AnimateableLabel` would use the incorrect `textColor` when overriding the `userInterfaceStyle`.
+     - by [Gyuni](https://github.com/Gyuni)
+
+---
+## [2.12.0](https://github.com/uias/Tabman/releases/tag/2.12.0)
+Released on 2022-01-15
+
+#### Added
+- [#580](https://github.com/uias/Tabman/pull/580) Support for `selectedImage` to `TMTabItemBarButton` and `TMBarItem`.
+     - by [divyeshmakwana96](https://github.com/divyeshmakwana96)
+
+#### Fixed
+- [#584](https://github.com/uias/Tabman/pull/584) Buttons incorrectly setting selected state on interactive scroll.
+     - by [nikitapankiv](https://github.com/nikitapankiv)
 
 ---
 ## [2.11.1](https://github.com/uias/Tabman/releases/tag/2.11.1)

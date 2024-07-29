@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 30/10/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ public enum TMTransitionStyle {
 }
 
 /// Object that can provide an animation style.
-internal protocol TMTransitionStyleable: class {
+internal protocol TMTransitionStyleable: AnyObject {
     
     var transitionStyle: TMTransitionStyle { get set }
 }

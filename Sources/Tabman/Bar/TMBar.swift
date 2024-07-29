@@ -3,13 +3,13 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 28/05/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
 /// Data source to a `TMBar` that is primarily responsible for providing a bar with contents.
-public protocol TMBarDataSource: class {
+public protocol TMBarDataSource: AnyObject {
     
     /// Provide a `BarItem` for an index in the bar.
     ///
@@ -21,7 +21,7 @@ public protocol TMBarDataSource: class {
 }
 
 /// Delegate to a `TMBar` that is primarily responsible for handling user interaction within the bar.
-public protocol TMBarDelegate: class {
+public protocol TMBarDelegate: AnyObject {
     
     /// Bar requires scrolling to a new page following a user interaction.
     ///

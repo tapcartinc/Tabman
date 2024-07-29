@@ -3,12 +3,12 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 25/10/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
-protocol GestureScrollViewGestureDelegate: class {
+protocol GestureScrollViewGestureDelegate: AnyObject {
     
     func scrollView(_ scrollView: GestureScrollView,
                     didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction)

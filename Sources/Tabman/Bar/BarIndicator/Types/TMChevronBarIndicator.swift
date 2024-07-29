@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 01/11/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -51,9 +51,7 @@ open class TMChevronBarIndicator: TMBarIndicator {
     }
     /// Color of the chevron.
     open override var tintColor: UIColor! {
-        didSet {
-            chevronLayer.fillColor = tintColor.cgColor
-        }
+        didSet {}
     }
     
     // MARK: Lifecycle
@@ -77,6 +75,11 @@ open class TMChevronBarIndicator: TMBarIndicator {
         
         chevronLayer.fillColor = tintColor.cgColor
         chevronContainer.layer.addSublayer(chevronLayer)
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        chevronLayer.fillColor = tintColor.cgColor
     }
     
     // MARK: Layout

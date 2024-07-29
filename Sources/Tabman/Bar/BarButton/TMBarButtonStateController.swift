@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 03/07/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -53,6 +53,12 @@ internal final class TMBarButtonStateController: TMBarButtonController {
         }
         
         targetButton?.selectionState = .from(rawValue: directionalProgress)
-        oldTargetButton?.selectionState = .from(rawValue: 1.0 - directionalProgress)
+        
+        let progressComplement = 1.0 - directionalProgress
+        if progressComplement < 0.001 { // e - 0.001
+            self.selectedButton = targetButton
+        }
+        
+        oldTargetButton?.selectionState = .from(rawValue: progressComplement)
     }
 }

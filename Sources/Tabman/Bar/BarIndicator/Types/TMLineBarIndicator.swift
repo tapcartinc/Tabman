@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -38,9 +38,7 @@ open class TMLineBarIndicator: TMBarIndicator {
     
     /// Color of the line.
     open override var tintColor: UIColor! {
-        didSet {
-            backgroundColor = tintColor
-        }
+        didSet {}
     }
     /// Weight of the line.
     ///
@@ -89,6 +87,11 @@ open class TMLineBarIndicator: TMBarIndicator {
         superview?.layoutIfNeeded()
         layer.cornerRadius = cornerStyle.cornerRadius(for: weight.rawValue,
                                                       in: bounds)
+    }
+
+    open override func tintColorDidChange() {
+        super.tintColorDidChange()
+        backgroundColor = tintColor
     }
 }
 

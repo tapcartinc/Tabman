@@ -1,5 +1,5 @@
 //
-//  TabViewController.swift
+//  ButtonBarExampleViewController.swift
 //  Example
 //
 //  Created by Merrick Sapsford on 04/10/2020.
@@ -9,7 +9,7 @@ import UIKit
 import Tabman
 import Pageboy
 
-class TabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
+class ButtonBarExampleViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
 
     // MARK: Properties
     
@@ -45,9 +45,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         bar.buttons.customize {
             $0.tintColor = UIColor.tabmanForeground.withAlphaComponent(0.4)
             $0.selectedTintColor = .tabmanForeground
-            if #available(iOS 11, *) {
-                $0.adjustsFontForContentSizeCategory = true
-            }
+            $0.adjustsFontForContentSizeCategory = true
         }
         bar.indicator.tintColor = .tabmanForeground
         

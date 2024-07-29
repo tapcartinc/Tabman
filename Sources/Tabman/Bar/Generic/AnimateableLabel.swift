@@ -3,7 +3,7 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 09/11/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
@@ -34,7 +34,11 @@ internal class AnimateableLabel: UIView {
         }
         set {
             let textColor = newValue ?? .black
-            textLayer.foregroundColor = textColor.cgColor
+            if #available(iOS 13, *) {
+                textLayer.foregroundColor = textColor.resolvedColor(with: traitCollection).cgColor
+            } else {
+                textLayer.foregroundColor = textColor.cgColor
+            }
         }
     }
     var font: UIFont? {
@@ -92,16 +96,14 @@ internal class AnimateableLabel: UIView {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        if #available(iOS 10, *) {
-            guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else {
-                return
-            }
-            reloadTextLayerForCurrentFont()
+        guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else {
+            return
         }
+        reloadTextLayerForCurrentFont()
     }
     
     private func reloadTextLayerForCurrentFont() {
-        if #available(iOS 11, *), adjustsFontForContentSizeCategory, let font = font, let textStyle = font.fontDescriptor.object(forKey: .textStyle) as? UIFont.TextStyle {
+        if adjustsFontForContentSizeCategory, let font = font, let textStyle = font.fontDescriptor.object(forKey: .textStyle) as? UIFont.TextStyle {
             let font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
             textLayer.font = font
             textLayer.fontSize = font.pointSize

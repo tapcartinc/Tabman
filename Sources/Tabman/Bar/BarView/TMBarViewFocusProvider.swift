@@ -3,13 +3,13 @@
 //  Tabman
 //
 //  Created by Merrick Sapsford on 07/06/2018.
-//  Copyright © 2019 UI At Six. All rights reserved.
+//  Copyright © 2022 UI At Six. All rights reserved.
 //
 
 import UIKit
 
 /// An object that can provide focus related positional data to a BarView.
-public protocol TMBarViewFocusProvider: class {
+public protocol TMBarViewFocusProvider: AnyObject {
     
     /**
      Calculate the 'focusArea' for the current position and capacity.
